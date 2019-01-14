@@ -1,5 +1,5 @@
 
-# Parallel and Distributed Computing with MapReduce
+# Parallel and Distributed Computing with Map-Reduce
 
 ## Introduction 
 
@@ -12,8 +12,8 @@ Let's see this with help of some simple examples in this lesson.
 ## Objectives
 You will be able to:
 - Understand distributed and parallel computing environments
-- Explain how MapReduce differs from traditional programming approaches
-- Understand how MapReduce works using a simple word count example. 
+- Explain how Map-Reduce differs from traditional programming approaches
+- Understand how Map-Reduce works using a simple word count example
 
 ## Parallel and Distributed Processing
 
@@ -71,7 +71,7 @@ In order to be able to work together, multiple processors need to be able to sha
 
 <img src="shared.png" width=500>
 
-## So What is MapReduce ?
+## So What is Map-Reduce ?
 
 > __MapReduce__ is a software framework developed for processing datasets that qualify as "Big Data", in a __parallel and distributed__ procesing environment over several computers/nodes connected to each other as part of a __cluster__. 
 
