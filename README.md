@@ -5,7 +5,9 @@
 
 MapReduce is a programming paradigm that enables the ability to scale across hundreds or thousands of servers for big data analytics. The underlying concept can be somewhat difficult to grasp, because this paradigm differs from the traditional programming practices. This lesson aims to present a simple yet intuitive account of MapReduce that we shall put into practice in upcoming labs. 
 
-*In a nutshell, the term "MapReduce" refers to two distinct tasks. The first is the __Map__ job, which takes one set of data and transforms it into another set of data, where individual elements are broken down into tuples __(key/value pairs)__, while the __Reduce__ job takes the output from a map as input and combines those data tuples into a smaller set of tuples.*
+
+
+*In a nutshell, the term "MapReduce" refers to two distinct tasks. The first is the __Map__ job, which takes one set of data and transforms it into another set of data. In the map job, individual elements are broken down into tuples of __(key/value pairs)__. The __Reduce__ job then takes the output from the map as an input and combines those data tuples into a smaller set of tuples based off of decisions made by the programmer.*
 
 Let's see this with help of some simple examples in this lesson.
 
@@ -55,9 +57,6 @@ With parallel computing:
 * each one of the instructions is executed simultaneously on different processors
 * all of the answers are collected from the small problems and combined into one final answer
 
-
-Imagine you wanted to calculate every baseball players performance for their entire
-
 In the image below, you can see a simple example of a process being broken up and completed both sequentially and in parallel.
 
 ### new image here
@@ -78,11 +77,13 @@ and of course
 
 Here is what this would look like if it was calculated sequentially.
 
+### new image here
+
 If a movie studio was to compute each one it's movie's profits sequentially, it would take far more time than if it calculated each movie's profit and combined them in parallel.
 
-Here is a diagram of what it parallel processing looks like in actions
+Here is a diagram of what the parallel processing of the actions would look like.
 
-### new image here
+
 
 ### new image here
 
@@ -165,7 +166,7 @@ Let's assume that we would like to extend the word count program and we would li
 > __InputFile -> Map-1 -> Reduce1 -> output1 -> Map2 - > Reduce-2 -> output2 -> ....Map-x -> Reduce-x__  
 
 
-Next, we are going to look at Apache Spark, which adds extra features of security and fault tolerance to it's MapReduce offering, making it an industry standard. We will also look at programming for the above mentioned word count problem.
+Next, we are going to look at Apache Spark, which adds extra features of security and fault tolerance to it's MapReduce offering, making it an industry standard. We will also look at how we can use map reduce programming with spark for the above mentioned word count problem, which is the distributed computing equivalent of printing `Hello World`.
 
 ## Additional Resources
 
@@ -177,4 +178,4 @@ Visit following external links to read about above descriptions and example in m
 
 ## Summary 
 
-In this lesson, we looked at How MapReduce allows a programming paradigm, quite different than traditional programming practices, yet very powerful and effective towards processing large amounts of data. Next we shall look at Spark programming environment and some coding exercises to get grips with PySpark programming. 
+In this lesson, we looked at the MapReduce programming paradigm, which is quite different than traditional programming practices and very effective towards processing large amounts of data. Next we will look at the Spark programming environment and some coding exercises to understand how to manage PySpark programming. 
