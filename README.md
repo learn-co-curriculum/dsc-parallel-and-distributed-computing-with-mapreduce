@@ -56,8 +56,6 @@ With parallel computing:
 * all of the answers are collected from the small problems and combined into one final answer
 
 
-Imagine you wanted to calculate every baseball players performance for their entire
-
 In the image below, you can see a simple example of a process being broken up and completed both sequentially and in parallel.
 
 <img src = "./images/parallel.png">
@@ -82,7 +80,7 @@ If a movie studio was to compute each one it's movie's profits sequentially, it 
 
 Here is a diagram of what it parallel processing looks like in actions
 
-<img src = "./images/parallel_movies.png">
+<img src = "./images/parallel_movies_.png">
 
 So how can we make all these nodes communicate with one another? By using a programming paradigm called MapReduce!!
 
