@@ -1,5 +1,5 @@
 
-# Parallel and Distributed Computing with Map-Reduce
+# Parallel and Distributed Computing with MapReduce
 
 ## Introduction 
 
@@ -12,27 +12,27 @@ Let's see this with help of some simple examples in this lesson.
 ## Objectives
 You will be able to:
 
-- Understand distributed and parallel computing environments
-- Explain how Map-Reduce differs from traditional programming approaches
-- Understand how Map-Reduce works using a simple word count example
+- Explain how the MapReduce paradigm works and how it differs from traditional programming approaches 
+- Explain what is meant by distributed and parallel processing 
+- Use MapReduce with a simple word count example 
 
 ## Parallel and Distributed Processing
 
-The MapReduce programming paradigm is designed to allow __Parallel and Distributed Processing__  of large sets of data that classify as Big Data. MapReduce allows us to convert such big datasets into sets of __Tuples__ as __key:value__ pairs, as we'll see shortly. These pairs are analogous to the data structure we saw with dictionaries and JSON files etc. These tuples are __mapped__ and __reduced__ under in a computational environment to allow distributed execution of complex tasks on a group (cluster) of interconnected computers. 
+The MapReduce programming paradigm is designed to allow __Parallel and Distributed Processing__  of large sets of data (also known as Big Data). MapReduce allows us to convert such big datasets into sets of __tuples__ as __key:value__ pairs, as we'll see shortly. These pairs are analogous to the data structures we saw with dictionaries and JSON files etc. These tuples are __mapped__ and __reduced__ in a computational environment to allow distributed execution of complex tasks on a group (cluster) of interconnected computers. 
 
-So in simpler terms, _MapReduce use parallel distributed computing to turn big data into regular data._
+So in simpler terms, _MapReduce uses parallel distributed computing to turn big data into regular data._
 
-Let's first see what we mean by parallel and distributed processing below
+Let's first see what we mean by parallel and distributed processing below. 
 
 ### Distributed Processing Systems
 
->A distributed processing system is a group of computers in a network working in tandem to accomplish a task
+> A distributed processing system is a group of computers in a network working in tandem to accomplish a task
 
 When computers are in a distributed system, they do not share hard drive memory or processing memory; they communicate with one other through messages, which are transferred over a network. The individual computers in this network are referred to as __nodes__. As you've seen before, computers can send requests as well as packets of data to one another.
 
-The two most common ways of organizing computers into a distributed system are the Client/Server system and  peer-to-peer system.
+The two most common ways of organizing computers into a distributed system are the client-server system and peer-to-peer system.
 
-The client server architecture has nodes that make requests to a central server. The server will then decide to accept of reject these requests and send additional methods out to the outer nodes.
+The client-server architecture has nodes that make requests to a central server. The server will then decide to accept or reject these requests and send additional methods out to the outer nodes.
 
 Peer-to-peer systems allow nodes to communicate with one another directly without requiring approval from a server.
 
@@ -45,7 +45,7 @@ These networks are useful for many applications all over the web, but they are g
 
 Just like in the workplace, whenever there is an extremely complex task, it is best to divide and conquer. In the world of big data, if the data is "big" enough, it is generally better to take the approach of splitting up the larger task into smaller pieces.
 
-Even though individual processors are getting faster (remember [Moore's Law](https://en.wikipedia.org/wiki/Moore%27s_law), they will never have the ability to keep up with the amount of data we are able to produce. The best solution computer scientists have developed has been to use the power of __multiple processors__ to put them to the same task. If using a well-developed distributed system, multiple processors can accomplish tasks at a fraction of the time it would take to a single processor the accomplish. As noted in the picture below, if you can divide the work between multiple processors, everything will be more efficient. 
+Even though individual processors are getting faster (remember [Moore's Law](https://en.wikipedia.org/wiki/Moore%27s_law), they will never have the ability to keep up with the amount of data we are able to produce. The best solution computer scientists have developed has been to use the power of __multiple processors__ to put them to the same task. When using a well-developed distributed system, multiple processors can accomplish tasks at a fraction of the time it would take for a single processor to accomplish. As noted in the picture below, if you can divide the work between multiple processors, everything will be more efficient. 
 
 With parallel computing:
 
@@ -78,24 +78,22 @@ Here is what this would look like if it was calculated sequentially.
 
 If a movie studio was to compute each one it's movie's profits sequentially, it would take far more time than if it calculated each movie's profit and combined them in parallel.
 
-Here is a diagram of what it parallel processing looks like in actions
+Here is a diagram of what parallel processing looks like in action: 
 
 <img src = "./images/parallel_movies_.png">
 
 So how can we make all these nodes communicate with one another? By using a programming paradigm called MapReduce!!
 
-### Map
-
 __MapReduce__ is a software framework developed for processing datasets that qualify as "Big Data", in a __distributed and parallel__ processing environment over several computers/nodes connected to each other as part of a __cluster__. It is a specific instance of the generalized split-apply-combine technique used to perform different data analyses.
 
 We will soon look into a simple example that is shown to introduce MapReduce,  __The Word Count Problem__. The overall concept of MapReduce is very simple yet very powerful as:
 
-- Somehow, all data can be mapped to <key:value> pairs.
-- Keys and Values themselves can be of ANY data type.
+- Somehow, all data can be mapped to **key:value** pairs 
+- Keys and values themselves can be of ANY data type 
 
 For our example, let's say a national association of zoos wants to determine the total number of species of animals in the country. After receiving responses from every zoo in the country, a data scientist in charge of receives a large file that has a different zoo located on each line with the species at that location. 
 
-Here are the first five zoos the data scientist reads over in the data document they receives:
+Here are the first five zoos the data scientist reads over in the data document they receive:
 
 | Animals              |
 |----------------------|
@@ -106,15 +104,15 @@ Here are the first five zoos the data scientist reads over in the data document 
 | koala giraffe        |
 
 
-Let's now look at how you would use a map reduce framework in this simple word count problem example that could be generalized to much more data.
+Let's now look at how you would use the MapReduce framework in this simple word count example that could be generalized to much more data.
 
 <img src = "./images/word_count.png">
 
 Let's take a look at an image of this process in action and determine what's actually going on.
 
-### 1. MAP Task ((Splitting & Mapping)
+### 1. MAP Task (Splitting & Mapping)
 
-The dataset that needs processing must first be transformed into <key:value> pairs and split into fragments, which are then assigned to map tasks. Each computing cluster is assigned a number of map tasks, which are subsequently distributed among its nodes. In this example, let's assume that we are using 5 nodes (a server with 5 different worker.
+The dataset that needs processing must first be transformed into **key:value** pairs and split into fragments, which are then assigned to map tasks. Each computing cluster is assigned a number of map tasks, which are subsequently distributed among its nodes. In this example, let's assume that we are using 5 nodes (a server with 5 different workers).
 
 First, split the data from one file or files into however many nodes are being used.
 
@@ -126,13 +124,14 @@ After processing of the original key:value pairs, some __intermediate__ key:valu
 
 ### 2. Shuffling
 
-This list from the map task is divided into a new set of fragments that sorts and shuffles the mapped objects into an order or grouping that will make it easier to reduce them. __The number these new fragments, will be the same as the number of the reduce tasks__. 
+This list from the map task is divided into a new set of fragments that sorts and shuffles the mapped objects into an order or grouping that will make it easier to reduce them. __The number of these new fragments will be the same as the number of the reduce tasks__. 
+
 
 ### 3. REDUCE Task (Reducing)
 
 Now, every properly shuffled segment will have a reduce task applied to it. After the task is completed, the final output is written onto a file system. The underlying file system is usually HDFS (Hadoop Distributed File System). 
 
-It's important to note that MapReduce will generally only be powerful when dealing with large amounts of data. When using on a small dataset, it will be faster to perform operations not in the MapReduce framework.
+It's important to note that MapReduce will generally only be powerful when dealing with large amounts of data. When working with a small dataset, it will be faster not to perform operations in the MapReduce framework.
 
 There are two groups of entities in this process to ensuring that the map reduce task gets done properly:
 
@@ -154,11 +153,11 @@ def reduce( key , values ) :
     emit ( key , sum( values ) )
 ```
 
-Similarly, we can discuss combining several Map-Reduce jobs in order to complete a given task. This means that once a first MapReduce job is finished, the output will become an input for the second MapReduce job and that output could be the final result (or fed into another job MapReduce job). 
+Similarly, we can discuss combining several MapReduce jobs in order to complete a given task. This means that once a first MapReduce job is finished, the output will become an input for the second MapReduce job and that output could be the final result (or fed into another job MapReduce job). 
 
 Let's assume that we would like to extend the word count program and we would like to count all words in a given Twitter dataset. The first MapReduce will read our twitter data and extract the tweets text. The second MapReduce is the word count Map-Red which analyze twitter and produce the statistics about it. So it is simply chaining together multiple jobs. 
 
-> __InputFile -> Map-1 -> Reduce1 -> output1 -> Map2 - > Reduce-2 -> output2 -> ....Map-x -> Reduce-x__  
+> __InputFile -> Map-1 -> Reduce-1 -> output-1 -> Map-2 - > Reduce-2 -> output-2 -> ... Map-x -> Reduce-x__  
 
 
 Next, we are going to look at Apache Spark, which adds extra features of security and fault tolerance to it's MapReduce offering, making it an industry standard. We will also look at programming for the above mentioned word count problem.
@@ -173,4 +172,4 @@ Visit following external links to read about above descriptions and example in m
 
 ## Summary 
 
-In this lesson, we looked at How MapReduce allows a programming paradigm, quite different than traditional programming practices, yet very powerful and effective towards processing large amounts of data. Next we shall look at Spark programming environment and some coding exercises to get grips with PySpark programming. 
+In this lesson, we looked at how MapReduce allows a programming paradigm, quite different than traditional programming practices, yet very powerful and effective towards processing large amounts of data. Next we will look at the Spark programming environment and some coding exercises to get grips with PySpark programming. 
