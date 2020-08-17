@@ -1,3 +1,4 @@
+
 # Parallel and Distributed Computing with MapReduce
 
 ## Introduction 
@@ -35,7 +36,7 @@ The client-server architecture has nodes that make requests to a central server.
 
 Peer-to-peer systems allow nodes to communicate with one another directly without requiring approval from a server.
 
-<img src = "./images/types_of_network.png">
+<img src="images/types_of_network.png">
 
 
 ### Parallel Processing Systems
@@ -57,7 +58,7 @@ With parallel computing:
 
 In the image below, you can see a simple example of a process being broken up and completed both sequentially and in parallel.
 
-<img src = "./images/parallel.png">
+<img src="images/parallel.png">
 
 Of course, not all problems can be parallelized, but there are some that are formally called [embarrassingly parallel](https://en.wikipedia.org/wiki/Embarrassingly_parallel) problems that require hardly any effort to ensure that a certain task is able to easily parallelizable. One example of something that would be embarrassingly parallelizable would be password cracking. Another example would be a movie production company trying to calculate the total profit they made from all of the movies they released in a given year. Let's think about all of the components that go into determining whether or not a movie is profitable.
 
@@ -79,7 +80,7 @@ If a movie studio was to compute each one it's movie's profits sequentially, it 
 
 Here is a diagram of what parallel processing looks like in action: 
 
-<img src = "./images/parallel_movies_.png">
+<img src="images/parallel_movies_.png">
 
 So how can we make all these nodes communicate with one another? By using a programming paradigm called MapReduce!
 
@@ -107,7 +108,7 @@ Let's now look at how you would use the MapReduce framework in this simple word 
 
 We'll take a look at an image of this process in action and determine what's actually going on.
 
-<img src = "./images/word_count.png">
+<img src="images/word_count.png">
 
 ### 1. MAP Task (Splitting & Mapping)
 
