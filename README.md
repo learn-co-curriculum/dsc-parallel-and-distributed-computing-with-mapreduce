@@ -1,4 +1,3 @@
-
 # Parallel and Distributed Computing with MapReduce
 
 ## Introduction 
@@ -91,7 +90,7 @@ We will soon look into a simple example that is shown to introduce MapReduce,  _
 - Somehow, all data can be mapped to **key:value** pairs 
 - Keys and values themselves can be of ANY data type 
 
-For our example, let's say a national association of zoos wants to determine the total number of species of animals in the country. After receiving responses from every zoo in the country, a data scientist in charge of receives a large file that has a different zoo located on each line with the species at that location. 
+For our example, let's say a national association of zoos wants to determine the total number of species of animals in the country. After receiving responses from every zoo in the country, a data scientist receives a large file that has a different zoo located on each line with the species at that location. 
 
 Here are the first five zoos the data scientist reads over in the data document they receive:
 
@@ -160,7 +159,7 @@ Let's assume that we would like to extend the word count program and we would li
 > __InputFile -> Map-1 -> Reduce-1 -> output-1 -> Map-2 - > Reduce-2 -> output-2 -> ... Map-x -> Reduce-x__  
 
 
-Next, we are going to look at Apache Spark, which adds extra features of security and fault tolerance to its MapReduce offering, making it an industry standard. We will also look at programming for the aforementioned word count problem.
+Later we are going to look at Apache Spark, which adds extra features of security and fault tolerance to its MapReduce offering, making it an industry standard. We will also look at programming for the aforementioned word count problem.
 
 ## Additional Resources
 
@@ -172,4 +171,4 @@ Visit following external links to read about the previous descriptions and examp
 
 ## Summary 
 
-In this lesson, we looked at how MapReduce allows a programming paradigm quite different than traditional programming practices, yet very powerful and effective towards processing large amounts of data. Next, we will look at the Spark programming environment and some coding exercises to get grips with PySpark programming. 
+In this lesson, we looked at how MapReduce allows a programming paradigm quite different than traditional programming practices, yet very powerful and effective towards processing large amounts of data.
